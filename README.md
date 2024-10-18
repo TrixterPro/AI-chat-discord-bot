@@ -10,7 +10,7 @@ This repository contains a Discord bot that utilizes the Gemini AI model for int
    - Input your Discord bot token. To obtain a token:
      1. Go to the [Discord Developer Portal](https://discord.com/developers/applications).
      2. Create a new application.
-     3. Under the "Bot" tab, click "Add Bot" and then "reset token" and lastly "Copy" the token.
+     3. Under the "Bot" tab, click "Add Bot," then "Reset Token," and lastly "Copy" the token.
 
 2. **Environment Variable Setting (Optional):**
    - If you prefer to use environment variables, set the `use_env` option to `True` in `config.py`. 
@@ -20,6 +20,9 @@ This repository contains a Discord bot that utilizes the Gemini AI model for int
      ```
 
 3. **Gemini API Key:**
+   - To obtain your Gemini API key:
+     1. Go to [ai.google.dev](https://ai.google.dev) and click on "Get API key in studio." (You can also go directly to this [link](https://aistudio.google.com/app/apikey).)
+     2. Click "Create API Key," select a project, and then click "Generate Key" in the existing project.
    - If `use_env` is set to `True`, you will also need to add your Gemini API key to the `.env` file:
      ```
      KEY='your_gemini_api_key'
@@ -53,4 +56,3 @@ Each channel has its own memory, ensuring that conversations are independent and
 ## Owner Information
 - **Owner Name:** Trix
 - **Discord Username:** codewithtrix
-
