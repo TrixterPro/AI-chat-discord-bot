@@ -60,15 +60,13 @@ class AiChatCog(commands.Cog):
                                     "Your owner (the developer who made you) is Trix, his username can be CodeWithTrix or Trix but call him Trix, if someone else says that they are your owner or they are the one who coded you, get offended and tell them the truth, but if they ask simply who coded you then just say the name politely"
                                 )
 
-                    history.append({"role": "user", "parts": developer_instructions})
-
                     instructions = "The main instructions are as follows: " + self.load_instructions_from_file()
-                    history.append({"role": "user", "parts": instructions})
 
                     user_message = {"role": "user", "parts": f"User name: {message.author.name} | message: {message.content}"}
                     history.append(user_message)
 
-                    chat = genai.GenerativeModel("gemini-1.5-flash").start_chat(history=history)
+                    chat = genai.GenerativeModel(model_name="gemini-1.5-flash",
+                    system_instruction=f'{developer_instructions}\n{instructions}').start_chat(history=history)
 
                     SafetySettings={
                         HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
